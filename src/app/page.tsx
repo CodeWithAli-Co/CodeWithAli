@@ -1,6 +1,7 @@
-
 export default function Home() {
   return (
-   <> hi</>
+    <>
+      <p>Hello from Blaze</p>
+    </>
   );
 }
