@@ -1,6 +1,8 @@
 import alipic from "../../public/alipic.png";
 
 import Image from "next/image";
+import { FlashMessages } from "./components/FlashMessage";
+import { ContactForm } from "./components/contact";
 
 export default function Home() {
   return (
@@ -33,6 +35,7 @@ export default function Home() {
                 {% endif %}
 
                 {% endwith %} */}
+                <FlashMessages/>
 
             <h1>Welcome to CodeWithAli!</h1>
             <p>Explore our courses and start learning today!</p>
@@ -117,27 +120,7 @@ export default function Home() {
           <h2>Contact Us</h2>
           <p>Email: codewithali.learn@gmail.com</p>
           <div className="container">
-            <form
-              className="contact-form"
-              action="/submit_contact"
-              method="post"
-            >
-              <div className="form-group">
-                {/* <label for="name">Name:</label> */}
-                {/* <input type="text" id="name" name="name" required pattern="[A-Za-z0-9\s.,'-]+"> */}
-              </div>
-              <div className="form-group">
-                {/* <label for="email">Email:</label> */}
-                {/* <input type="email" id="email" name="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}"> */}
-              </div>
-              <div className="form-group">
-                {/* <label for="message">Message:</label> */}
-                {/* <textarea id="message" name="message" rows="4" required pattern="[A-Za-z0-9\s.,'!?\-()@]+"></textarea> */}
-              </div>
-              <button className="btn-submit" type="submit">
-                Send Message
-              </button>
-            </form>
+              <ContactForm/>
           </div>
         </section>
         <section className="faqs" id="faq">
