@@ -10,11 +10,11 @@ interface FlashMessage {
 export const FlashMessages = () => {
   const [messages, setMessages] = useState<FlashMessage[]>([]);
 
-  // In a real application, you would likely get these messages from your state management solution
-  // or from an API response. This is just a demonstration.
+  //  we would likely get these messages from your state management solution
+  // or from an API response. This is me testing
   useEffect(() => {
     // Example of setting a flash message
-    // In practice, you would set this based on actual application events
+    // its just set to show, doesn't haave logic to when to show
     setMessages([
       { category: 'success', message: 'Operation completed successfully!' }
     ]);

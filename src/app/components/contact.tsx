@@ -31,7 +31,7 @@ export const ContactForm = () => {
       // Handle success (e.g., show a success message)
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Handle error
+      // Handle error, atm still doesn't work but too tired to go on
     }
   };
 
