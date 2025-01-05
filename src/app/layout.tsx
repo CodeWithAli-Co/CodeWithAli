@@ -24,12 +24,12 @@ export default function RootLayout({
               <Image src={alipic} alt="CodeWithAli" className="logo" />
             </div>
             <div className="nav-links">
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/courses">Courses</a>
-              <a href="/#contact">Contact</a>
-              <a href="/#reviews">Reviews</a>
-              <a href="/#faq">FAQ</a>
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/courses">Courses</Link>
+              <Link href="/#contact">Contact</Link>
+              <Link href="/#reviews">Reviews</Link>
+              <Link href="/#faq">FAQ</Link>
             </div>
           </nav>
         </header>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <>
@@ -16,9 +18,9 @@ export default function About() {
 
           <h1>Welcome to CodeWithAli!</h1>
           <p>Explore our courses and start learning today!</p>
-          <a href="/home#courses" className="btn">
+          <Link href="/home#courses" className="btn">
             Get Started
-          </a>
+          </Link>
         </div>
       </section>
       <section className="abouts">
