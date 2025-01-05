@@ -4,6 +4,11 @@ import Image from "next/image";
 import { FlashMessages } from "./components/FlashMessage";
 import { ContactForm } from "./components/contact";
 
+
+
+
+
+
 export default function Home() {
   return (
     <>
