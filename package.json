@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npm rebuild sharp"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
@@ -14,6 +15,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^4.0.1",
+    "sharp": "^0.33.5",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
