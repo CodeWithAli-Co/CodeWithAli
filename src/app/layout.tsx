@@ -21,12 +21,12 @@ export default function RootLayout({
           <div className="logo-container">
            
           <Image 
-              src={alipic} 
+              src="/alipic.png"  // Changed to direct path
               alt="CodeWithAli" 
               className="logo"
               width={100}
               height={100}
-            />
+              />
           </div>
 
           {/* Regular nav for larger screens */}
