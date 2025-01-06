@@ -4,7 +4,7 @@ import Link from "next/link";
 // The useRouter hook should be imported from next/navigation
 // and not next/router when using the App Router
 import { useRouter } from "next/navigation";
-import { useFormDataStore } from "../../components/contact";
+import { useFormDataStore } from "../../components/serviceform";
 
 const services = [
   {id: 'teaching', name: 'Coding Education', description: 'Learn to code with personalized tutoring sessions', route: 'education'},

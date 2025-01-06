@@ -1,13 +1,13 @@
-import alipic from "../../public/alipic.png";
+'use client'
 
-import Image from "next/image";
 import { FlashMessages } from "./components/FlashMessage";
-import { ContactForm } from "./components/contact";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <section className="hero" id="hero">
@@ -106,6 +106,7 @@ export default function Home() {
       <section className="contact" id="contact">
         <h2>Contact Us</h2>
         <p>Email: unfold@codewithali.com</p>
+        <Link href='/contact' className="btn-submit">Send Message</Link>
       </section>
       <section className="faqs" id="faq">
         <h2>FAQ</h2>

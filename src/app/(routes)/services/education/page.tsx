@@ -1,6 +1,6 @@
 "use client";
 
-import { ContactForm } from "@/app/components/contact";
+import { ServiceForm } from "@/app/components/serviceform";
 import { useState } from "react";
 
 export default function EducationService() {
@@ -15,7 +15,7 @@ export default function EducationService() {
       <button type="button" className="btn-submit" onClick={() => Click()}>
         Apply
       </button>
-      {goTo ? <ContactForm /> : null}
+      {goTo ? <ServiceForm /> : null}
     </>
   );
 }

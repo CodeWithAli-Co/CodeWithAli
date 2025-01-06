@@ -55,7 +55,7 @@ const timelineOptions = [
   '3+ months'
 ];
 
-export function ContactForm() {
+export function ServiceForm() {
   // const [formData, setFormData] = useState<FormData>({
   //   name: '',
   //   email: '',
@@ -86,12 +86,14 @@ export function ContactForm() {
     setStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('/api/submit_contact', {
+      const response = await fetch('/api/send-service', {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${process.env.RESEND_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        // Need to send content to API
+        body: JSON.stringify(formData)
       });
 
       if (!response.ok) {
