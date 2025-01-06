@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 // The useRouter hook should be imported from next/navigation
 // and not next/router when using the App Router
 import { useRouter } from "next/navigation";
@@ -46,7 +47,7 @@ export default function Courses() {
       </section>
       <section className="contact">
         <h2>Contact Us</h2>
-        <a className="btn-submit" href="/#contact">Click Here</a>
+        <Link className="btn-submit" href="/#contact">Click Here</Link>
       </section>
       <footer>&copy; 2024 CodeWithAli. All rights reserved.</footer>
     </>

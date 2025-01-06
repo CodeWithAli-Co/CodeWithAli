@@ -3,6 +3,7 @@ import alipic from "../../public/alipic.png";
 import Image from "next/image";
 import { FlashMessages } from "./components/FlashMessage";
 import { ContactForm } from "./components/contact";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,13 +24,13 @@ export default function Home() {
 
           <h1>Welcome to CodeWithAli!</h1>
           <p>Explore our courses and start learning today!</p>
-          <a href="#courses" className="btn">
+          <Link href="#courses" className="btn">
             Get Started
-          </a>
+          </Link>
         </div>
         <div className="hero-image">
           {/* <img src="{{ url_for('static', filename='alipic.png') }}" alt="Hero Image"> */}
-          <Image src={alipic} alt="Hero Image" className="logo" />
+          {/* <Image src={alipic} alt="Hero Image" className="logo" /> */}
         </div>
       </section>
       <section className="about" id="about">
@@ -41,9 +42,9 @@ export default function Home() {
               seminars. Our mission is to make coding accessible and enjoyable
               for everyone.
             </h3>
-            <a className="btn-submit" href="/about">
+            <Link className="btn-submit" href="/about">
               Learn More About Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -114,21 +115,21 @@ export default function Home() {
             <h3>Q: How much do you cost?</h3>
             <p>A: Only 10 USD</p>
             <div className="btn-info">
-              <a href="#">Detailed Answer</a>
+              <Link href="#">Detailed Answer</Link>
             </div>
           </div>
           <div className="faq-card">
             <h3>Q: How much do you cost?2</h3>
             <p>A: Only 10 USD</p>
             <div className="btn-info">
-              <a href="#">Detailed Answer</a>
+              <Link href="#">Detailed Answer</Link>
             </div>
           </div>
           <div className="faq-card">
             <h3>Q: How much do you cost?3</h3>
             <p>A: Only 10 USD</p>
             <div className="btn-info">
-              <a href="#">Detailed Answer</a>
+              <Link href="#">Detailed Answer</Link>
             </div>
           </div>
         </div>

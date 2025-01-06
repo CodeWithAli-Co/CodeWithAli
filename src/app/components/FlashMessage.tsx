@@ -16,7 +16,7 @@ export const FlashMessages = () => {
     // Example of setting a flash message
     // its just set to show, doesn't haave logic to when to show
     setMessages([
-      { category: 'success', message: 'Operation completed successfully!' }
+      { category: 'success', message: 'Website is up and running!' }
     ]);
   }, []);
 
