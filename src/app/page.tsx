@@ -5,6 +5,11 @@ import { FlashMessages } from "./components/FlashMessage";
 import { ContactForm } from "./components/contact";
 import Link from "next/link";
 
+
+
+
+
+
 export default function Home() {
   return (
     <>
