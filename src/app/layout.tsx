@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
 import alipic from "../../public/alipic.png";
-import Image from "next/image";
+// import Image from "next/image";
 
 import "./globals.css";
 import Link from "next/link";
@@ -20,7 +20,8 @@ export default function RootLayout({
       <body>
         <header>
           <div className="logo-container">
-            <Image src={alipic} alt="CodeWithAli" className="logo" />
+           
+          <img src="/alipic.png" alt="Ali pic" className="ali-logo" />
           </div>
 
           {/* Regular nav for larger screens */}
