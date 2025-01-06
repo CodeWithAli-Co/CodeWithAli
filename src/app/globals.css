@@ -441,3 +441,15 @@ h2 {
   display: none;
 }
 
+footer {
+  background: var(--background-light);
+  color: var(--text-color);
+  text-align: center;  /* Already had this */
+  padding: 30px 20px;  /* Added horizontal padding */
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;      /* Add these three lines */
+  justify-content: center;
+  align-items: center;
+}
