@@ -126,7 +126,7 @@ export default function Home() {
             </div>
           </div>
           <div className="faq-card">
-            <h3>Q: How much do you cost?3333</h3>
+            <h3>Q: How much do you cost?3</h3>
             <p>A: Only 10 USD</p>
             <div className="btn-info">
               <Link href="#">Detailed Answer</Link>
