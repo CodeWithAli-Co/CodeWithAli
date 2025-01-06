@@ -2,22 +2,44 @@
 
 import { useState, FormEvent } from 'react';
 import { Send, Loader2 } from 'lucide-react';
+import { create } from 'zustand';
 
-interface FormData {
-  name: string;
-  email: string;
-  service: string;
-  budget: string;
-  timeline: string;
-  message: string;
+interface FormDataState {
+  name: string
+  setName: (name: string) => void
+  email: string
+  setEmail: (email: string) => void
+  service: string
+  setService: (service: string) => void
+  budget: string
+  setBudget: (budget: string) => void
+  timeline: string
+  setTimeline: (timeline: string) => void
+  message: string
+  setMessage: (message: string) => void
 }
 
-const services = [
-  {id: 'teaching', name: 'Coding Education', description: 'Learn to code with personalized tutoring sessions'},
-  {id: 'debugging', name: 'Bug Fixing', description: 'Get help with technical issues and bugs'},
-  {id: 'consulting', name: 'Technical Consulting', description: 'Expert advice on your tech projects'},
-  {id: 'development', name: 'Custom Development', description: 'Full application development services'}
-];
+export const useFormDataStore = create<FormDataState>()((set) => ({
+  name: '',
+  setName: (name: string) => set({ name }),
+  email: '',
+  setEmail: (email: string) => set({ email }),
+  service: '',
+  setService: (service: string) => set({ service }),
+  budget: '',
+  setBudget: (budget: string) => set({ budget }),
+  timeline: '',
+  setTimeline: (timeline: string) => set({ timeline }),
+  message: '',
+  setMessage: (message: string) => set({ message }),
+}));
+
+// const services = [
+//   {id: 'teaching', name: 'Coding Education', description: 'Learn to code with personalized tutoring sessions'},
+//   {id: 'debugging', name: 'Bug Fixing', description: 'Get help with technical issues and bugs'},
+//   {id: 'consulting', name: 'Technical Consulting', description: 'Expert advice on your tech projects'},
+//   {id: 'development', name: 'Custom Development', description: 'Full application development services'}
+// ];
 
 const budgetRanges = [
   'Under $500',
@@ -34,14 +56,23 @@ const timelineOptions = [
 ];
 
 export function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    service: '',
-    budget: '',
-    timeline: '',
-    message: ''
-  });
+  // const [formData, setFormData] = useState<FormData>({
+  //   name: '',
+  //   email: '',
+  //   service: '',
+  //   budget: '',
+  //   timeline: '',
+  //   message: ''
+  // });
+  const { name, setName, email, setEmail, service, setService, budget, setBudget, timeline, setTimeline, message, setMessage } = useFormDataStore();
+  const formData = {
+    name,
+    email,
+    service,
+    budget,
+    timeline,
+    message
+  }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
@@ -67,14 +98,21 @@ export function ContactForm() {
         throw new Error('Failed to submit form');
       }
       
-      setFormData({
-        name: '',
-        email: '',
-        service: '',
-        budget: '',
-        timeline: '',
-        message: ''
-      });
+      // setFormData({
+      //   name: '',
+      //   email: '',
+      //   service: '',
+      //   budget: '',
+      //   timeline: '',
+      //   message: ''
+      // });
+      setName('');
+      setEmail('');
+      setService('');
+      setBudget('');
+      setTimeline('');
+      setMessage('');
+
       setStatus({
         type: 'success',
         message: 'Thanks for reaching out!'
@@ -91,17 +129,17 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 text-black">
       {/* Name Field */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
+        <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
           Name:
         </label>
         <input
           type="text"
           id="name"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          onChange={(e) => setName(e.target.value )}
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
         />
@@ -109,22 +147,22 @@ export function ContactForm() {
 
       {/* Email Field */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
+        <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
           Email:
         </label>
         <input
           type="email"
           id="email"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(e) => setEmail(e.target.value )}
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
 
       {/* Service Selection */}
-      <div>
-        <label className="block text-sm font-medium mb-2">
+      {/* <div>
+        <label className="block text-sm font-medium mb-2 text-white">
           Service Needed:
         </label>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -143,17 +181,17 @@ export function ContactForm() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Budget Range */}
       <div>
-        <label htmlFor="budget" className="block text-sm font-medium mb-2">
+        <label htmlFor="budget" className="block text-sm font-medium mb-2 text-white">
           Budget Range:
         </label>
         <select
           id="budget"
           value={formData.budget}
-          onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+          onChange={(e) => setBudget(e.target.value )}
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
         >
@@ -168,13 +206,13 @@ export function ContactForm() {
 
       {/* Timeline */}
       <div>
-        <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+        <label htmlFor="timeline" className="block text-sm font-medium mb-2 text-white">
           Desired Timeline:
         </label>
         <select
           id="timeline"
           value={formData.timeline}
-          onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+          onChange={(e) => setTimeline(e.target.value )}
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
         >
@@ -189,13 +227,13 @@ export function ContactForm() {
 
       {/* Message Field */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
+        <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
           Project Details:
         </label>
         <textarea
           id="message"
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) => setMessage(e.target.value )}
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
           required
           rows={6}
