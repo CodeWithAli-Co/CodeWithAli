@@ -1,159 +1,33 @@
-/* Tablet and smaller screens */
-@media (max-width: 768px) {
-    .contact-form {
-      max-width: 90%;
-      margin: 0 auto;
-    }
-    
-    footer {
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-  }
-
-  /* Mobile screens */
-  @media (max-width: 400px) {
-    body {
-      width: 100%;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-  
-    .nav-links {
-        display: none;
-      }
-    
-      .mobile-menu {
-        display: block;
-      }
-    
-    .hero {
-      width: 100%;
-      min-height: 80vh; /* Increase the height */
-      padding: 60px 20px; /* Increase padding top/bottom */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 30px; /* Add space between elements */
-      box-sizing: border-box;
-    }
-    .hero-text h1 {
-      font-size: 2.5rem; /* Slightly larger font */
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    
-    .hero-text{
-      max-width: 500px;
-    }
-    
-    .courses {
-      max-width: 100%;
-      margin: 0 auto;
-      margin-bottom: 50px;
-      padding: 20px;
-      height: auto;
-    }
-  
-    .course-card {
-      height: auto;
-      min-height: 130px;
-      margin-bottom: 20px;
-    }
-  
-    .course-grid,
-    .review-grid,
-    .faq-grid,
-    .about-grid {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 15px;
-    }
-  
-    .contact {
-      width: 100%;
-      padding: 30px 15px;
-      margin-bottom: 30px;
-      
-    }
-    
-  
-    .form-group {
-      width: 80%;
-      margin-bottom: 15px;
-      margin: 0 auto 15px auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
-    }
-    .form-group label{
-      width: 900px;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      max-width: 300px;
-      font-size: 14px;
-      padding: 10px;
-      margin: 0 auto;
-    }
-  
-    .container {
-      width: 100%;
-      padding: 0 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hero-text {
-      padding: 0 15px;
-    }
-  
-    .hero-text h1 {
-      font-size: 2rem;
-    }
-  
-    .hero-text p {
-      font-size: 1rem;
-    }
-  /* testing menu toggle barr */
-  
-  @import url('https://fonts.googleapis.com/css?family=Varela+Round');
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    overflow-x: hidden;
-    height: 100%;
-    font-family: 'Varela Round', sans-serif;
-  }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Changed to space-between */
+/* Base styles (mobile first) */
+body, html {
     width: 100%;
-    height: 60px;
-    background-color: var(--primary-color);
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    padding: 0 20px;
+    overflow-x: hidden;
   }
   
+  /* Navigation styles */
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    top: 22px;
+    right: 25px;
+    height: 22px;
+    width: 22px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Mobile Sidebar Menu */
   .sidebar-menu {
     position: fixed;
     top: 60px;
@@ -167,165 +41,177 @@
     transition: right 0.3s ease;
     text-align: center;
   }
-  .sidebar-menu a:hover {
-    background: var(--primary-color);
-  }
   
   .sidebar-menu.active {
     right: 0;
   }
-
+  
   .sidebar-menu a {
     color: var(--text-color);
     text-decoration: none;
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  .sidebarMenuInner {
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
   
-  .sidebarMenuInner li {
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(31, 31, 31, 0.95); /* Darker background for links */
-  }
-  
-  .sidebarMenuInner li:hover {
+  .sidebar-menu a:hover {
     background: var(--primary-color);
-    transition: all 0.3s ease;
   }
   
-  .sidebarMenuInner li a {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-  }
-  
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateX(0);
-  }
-  
-  .sidebarIconToggle {
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    top: 22px;
-    right: 25px; /* Changed from left to right */
-    height: 22px;
-    width: 22px;
-    padding: 0;
+  /* Hero Section */
+  .hero {
+    width: 100%;
+    min-height: 80vh;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
+    box-sizing: border-box;
   }
   
-  .spinner {
-    height: 3px;
-    background-color: #fff;
-    transition: all 0.3s;
+  .hero-text {
+    max-width: 500px;
+    padding: 0 15px;
   }
   
-  .spinner.horizontal {
-    transition: all 0.3s;
+  .hero-text h1 {
+    font-size: 2rem;
   }
   
-  .spinner.diagonal.part-1,
-  .spinner.diagonal.part-2 {
+  .hero-text p {
+    font-size: 1rem;
+  }
+  
+  /* Content Sections */
+  .courses {
     width: 100%;
-  }
-  
-  input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
-    opacity: 0;
-  }
-  
-  input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transform: rotate(135deg);
-    margin-top: 8px;
-  }
-  
-  input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transform: rotate(-135deg);
-    margin-top: -9px;
-  }
-  
-  .main {
-    margin-top: 60px;
+    margin: 0 auto 50px;
     padding: 20px;
+    height: auto;
   }
   
-  .mainInner {
+  .course-card {
+    height: auto;
+    min-height: 130px;
+    margin-bottom: 20px;
+  }
+  
+/* Base styles (mobile first) */
+.course-grid,
+.review-grid,
+.faq-grid,
+.about-grid {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 15px;
+  align-items: center; /* Centers items in column layout */
+}
+  
+  /* Contact Form */
+  .contact {
     width: 100%;
+    padding: 30px 15px;
+    margin-bottom: 30px;
   }
   
-  /* Add a subtle box shadow to the menu */
-  #sidebarMenu {
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    margin-top: 120px;
-  }
-  
-  /* Optional: Add transition effect to link hover */
-  .sidebarMenuInner li {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .sidebarMenuInner li:hover {
-    transform: translateX(-5px);
-  }
-  .menu-toggle {
-    display: flex;
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    top: 22px;
-    right: 25px;
-    height: 22px;
-    width: 22px;
-    padding: 0;
+  .form-group {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
   }
   
-  /* Media query for mobile */
-  @media (max-width: 480px) {
-    .sidebarIconToggle {
-      display: flex;
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px 15px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  /* Tablet breakpoint (600px and up) */
+  @media (min-width: 600px) {
+    .form-group {
+      max-width: 400px;
     }
     
-    .header {
-      padding-right: 50px;
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+      font-size: 1.2rem;
     }
   }
   
-  /* Mobile styles */
-  
-  /* testing */
-  
-  
-    footer {
-      padding: 20px 15px;
-      margin-top: 30px;
-     
+  /* Medium tablets (768px and up) */
+  @media (min-width: 768px) {
+    .form-group {
+      max-width: 500px;
     }
-  
-    footer::before {
-      width: 150%;
-      height: 150%;
+    
+    .course-grid,
+    .review-grid,
+    .faq-grid,
+    .about-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
   
+  /* Desktop (900px and up) */
+  @media (min-width: 900px) {
+    .nav-links {
+      display: flex;
+    }
+  
+    .mobile-menu,
+    .menu-toggle,
+    .sidebar-menu {
+      display: none;
+    }
+  
+    .form-group {
+      max-width: 600px;
+    }
+  
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+  
+    .hero-text p {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Large Desktop (1200px and up) */
+  @media (min-width: 1200px) {
+    .form-group {
+      max-width: 800px;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Utility classes for spacing and alignment */
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
