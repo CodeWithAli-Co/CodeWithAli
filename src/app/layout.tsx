@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
-import alipic from "../../public/alipic.png";
+// import alipic from "../../public/alipic.png";
 // import Image from "next/image";
 
 import "./globals.css";
