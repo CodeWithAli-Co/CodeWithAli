@@ -1,6 +1,8 @@
 "use client"
 import { useState } from "react";
-import alipic from "../assets/images/alipic.png";
+import Image from "next/image";
+// Update the import path to point to public
+import alipic from "../../public/alipic.png";
 import "./globals.css";
 import Link from "next/link";
 import "./mediaSizing.css"
@@ -18,7 +20,13 @@ export default function RootLayout({
         <header>
           <div className="logo-container">
            
-          <img src={alipic.src} alt="Ali pic" className="ali-logo" />
+          <Image 
+              src={alipic} 
+              alt="CodeWithAli" 
+              className="logo"
+              width={100}
+              height={100}
+            />
           </div>
 
           {/* Regular nav for larger screens */}
