@@ -30,7 +30,7 @@ export default function Home() {
         </div>
         <div className="hero-image">
           {/* <img src="{{ url_for('static', filename='alipic.png') }}" alt="Hero Image"> */}
-          <Image src={alipic} alt="Hero Image" className="logo" />
+          {/* <Image src={alipic} alt="Hero Image" className="logo" /> */}
         </div>
       </section>
       <section className="about" id="about">

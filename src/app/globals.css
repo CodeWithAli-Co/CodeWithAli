@@ -431,44 +431,136 @@ h2 {
   /* Adjust this color as needed */
 }
 
-/* Responsive design for smaller screens */
+/* Tablet and smaller screens */
 @media (max-width: 768px) {
   .contact-form {
     max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  footer {
+    padding: 20px 0;
+    margin-top: 40px;
   }
 }
 
-footer {
-  background: var(--background-light);
-  color: var(--text-color);
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  animation: footerShimmer 15s linear infinite;
-}
-
-@keyframes footerShimmer {
-  0% {
-    transform: rotate(0deg);
+/* Mobile screens */
+@media (max-width: 400px) {
+  body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .hero {
+    width: 100%;
+    min-height: 80vh; /* Increase the height */
+    padding: 60px 20px; /* Increase padding top/bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px; /* Add space between elements */
+    box-sizing: border-box;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem; /* Slightly larger font */
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text{
+    max-width: 500px;
+  }
+  
+  .courses {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    height: auto;
   }
 
-  100% {
-    transform: rotate(360deg);
+  .course-card {
+    height: auto;
+    min-height: 130px;
+    margin-bottom: 20px;
+  }
+
+  .course-grid,
+  .review-grid,
+  .faq-grid,
+  .about-grid {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .contact {
+    width: 100%;
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    
+  }
+  
+
+  .form-group {
+    width: 80%;
+    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .form-group label{
+    width: 900px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    padding: 0 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* Consider adding a mobile menu button */
+  }
+
+  footer {
+    padding: 20px 15px;
+    margin-top: 30px;
+  }
+
+  footer::before {
+    width: 150%;
+    height: 150%;
   }
 }
-
-/* ... (rest of the CSS remains the same) ... */
-
-
