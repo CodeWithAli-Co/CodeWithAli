@@ -7,16 +7,21 @@ import { useRouter } from "next/navigation";
 import { useFormDataStore } from "../../components/contact";
 
 const services = [
-  {id: 'teaching', name: 'Coding Education', description: 'Learn to code with personalized tutoring sessions'},
-  {id: 'debugging', name: 'Bug Fixing', description: 'Get help with technical issues and bugs'},
-  {id: 'consulting', name: 'Technical Consulting', description: 'Expert advice on your tech projects'},
-  {id: 'development', name: 'Custom Development', description: 'Full application development services'}
+  {id: 'teaching', name: 'Coding Education', description: 'Learn to code with personalized tutoring sessions', route: 'education'},
+  {id: 'debugging', name: 'Bug Fixing', description: 'Get help with technical issues and bugs', route: 'bugfix'},
+  {id: 'consulting', name: 'Technical Consulting', description: 'Expert advice on your tech projects', route: 'techconsult'},
+  {id: 'development', name: 'Custom Development', description: 'Full application development services', route: 'webdev'}
 ];
 
 
 export default function Services() {
   const router = useRouter();
   const { service, setService } = useFormDataStore();
+
+  const goCourse = (servid: string, route: string) => {
+    setService(servid);
+    router.push(`/services/${route}`)
+  }
 
   return (
     <>
@@ -66,7 +71,7 @@ export default function Services() {
                   ? 'border-blue-500 bg-blue-50 text-black'
                   : 'hover:border-gray-400'
               }`}
-              onClick={() => setService(serv.id)}
+              onClick={() => goCourse(serv.id, serv.route)}
             >
               <h3 className="font-medium">{serv.name}</h3>
               <p className="text-sm text-gray-600">{serv.description}</p>
