@@ -17,8 +17,8 @@ export default function About() {
             {% endwith %} */}
 
           <h1>Welcome to CodeWithAli!</h1>
-          <p>Explore our courses and start learning today!</p>
-          <Link href="/home#courses" className="btn">
+          <p>Explore our services and start learning today!</p>
+          <Link href="/services" className="btn">
             Get Started
           </Link>
         </div>
@@ -40,9 +40,9 @@ export default function About() {
       </section>
       <section className="contact">
         <h2>Contact Us</h2>
-        <p>Email: codewithali.learn@gmail.com</p>
+        <p>Email: unfold@codewithali.com</p>
       </section>
-      <footer>&copy; 2024 CodeWithAli. All rights reserved.</footer>
+      <footer>&copy; 2025 CodeWithAli. All rights reserved.</footer>
     </>
   );
 }

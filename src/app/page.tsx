@@ -1,11 +1,13 @@
-import alipic from "../../public/alipic.png";
+'use client'
 
-import Image from "next/image";
 import { FlashMessages } from "./components/FlashMessage";
-import { ContactForm } from "./components/contact";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <section className="hero" id="hero">
@@ -23,8 +25,8 @@ export default function Home() {
           <FlashMessages />
 
           <h1>Welcome to CodeWithAli!</h1>
-          <p>Explore our courses and start learning today!</p>
-          <Link href="#courses" className="btn">
+          <p>Explore our services and start learning today!</p>
+          <Link href="#services" className="btn">
             Get Started
           </Link>
         </div>
@@ -48,8 +50,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="courses" id="courses">
-        <h2>Our Courses</h2>
+      <section className="courses" id="services">
+        <h2>Our services</h2>
         <div className="course-grid">
           <div className="course-card">
             <h3>Introduction to Python</h3>
@@ -103,10 +105,8 @@ export default function Home() {
       </section>
       <section className="contact" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: codewithali.learn@gmail.com</p>
-        <div className="container">
-          <ContactForm />
-        </div>
+        <p>Email: unfold@codewithali.com</p>
+        <Link href='/contact' className="btn-submit">Send Message</Link>
       </section>
       <section className="faqs" id="faq">
         <h2>FAQ</h2>
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer>&copy; 2024 CodeWithAli. All rights reserved.</footer>
+      <footer>&copy; 2025 CodeWithAli. All rights reserved.</footer>
     </>
   );
 }
