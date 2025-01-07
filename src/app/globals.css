@@ -46,6 +46,9 @@ body {
   animation: gradientBG 15s ease infinite;
 }
 
+.menu-toggle{
+  display:none;
+}
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -100,10 +103,6 @@ header {
   }
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-}
 
 .nav-links a {
   color: var(--text-color);
@@ -253,7 +252,6 @@ header {
 
 .courses,
 .reviews,
-.contact,
 .faqs,
 .abouts {
   padding: 100px 20px;
@@ -284,6 +282,10 @@ h2 {
   gap: 30px;
 }
 
+.review-grid, .course-grid, .about-grid{
+  margin-bottom: 50px;
+
+}
 .course-card,
 .review,
 .faq-card,
@@ -338,6 +340,10 @@ h2 {
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 100px 20px;
   text-align: center;
   background-color: rgba(31, 31, 31, 0.9);
@@ -348,21 +354,32 @@ h2 {
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .form-group {
   margin-bottom: 20px;
   text-align: left;
 }
 
+
+
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: var(--text-color);
+  width: 900px;
+  
+}
+.contact{
+  margin-bottom: 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  align-items: center;
 }
 
 .form-group input,
@@ -407,48 +424,32 @@ h2 {
       var(--primary-color));
 }
 
-:root {
-  /* ... other variables ... */
-  --accent-color: #fca484;
-  /* Adjust this color as needed */
+
+/* without this code underneath, we wouldn't be able to see the nav-links from pixels 400 and above */
+
+/* Default styles (400px and above) */
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .contact-form {
-    max-width: 90%;
-  }
+.mobile-menu,
+.menu-toggle,
+.sidebar-menu,
+.sidebarIconToggle,
+#sidebarMenu {
+  display: none;
 }
 
 footer {
   background: var(--background-light);
   color: var(--text-color);
-  text-align: center;
-  padding: 30px 0;
+  text-align: center;  /* Already had this */
+  padding: 30px 20px;  /* Added horizontal padding */
   margin-top: 60px;
   position: relative;
   overflow: hidden;
+  display: flex;      /* Add these three lines */
+  justify-content: center;
+  align-items: center;
 }
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  animation: footerShimmer 15s linear infinite;
-}
-
-@keyframes footerShimmer {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* ... (rest of the CSS remains the same) ... */
