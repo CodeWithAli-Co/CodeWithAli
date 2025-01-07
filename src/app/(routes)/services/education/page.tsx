@@ -1,6 +1,6 @@
 "use client";
 
-import { ServiceForm } from "@/app/components/serviceform";
+import { TutoringForm } from "@/app/components/tutoringForm";
 import { useState } from "react";
 
 export default function EducationService() {
@@ -12,10 +12,11 @@ export default function EducationService() {
   return (
     <>
       <h3>Coding Education Service</h3>
-      <button type="button" className="btn-submit" onClick={() => Click()}>
+      {/* <button type="button" className="btn-submit" onClick={() => Click()}>
         Apply
-      </button>
-      {goTo ? <ServiceForm /> : null}
+      </button> */}
+      {/* {goTo ?  : null} */}
+      <TutoringForm />
     </>
   );
 }
