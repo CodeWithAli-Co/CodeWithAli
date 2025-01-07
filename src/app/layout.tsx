@@ -33,7 +33,7 @@ export default function RootLayout({
           <nav className="nav-links desktop-nav">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
+            <Link href="/services">Services</Link>  
             <Link href="/#contact">Contact</Link>
 
           </nav>
@@ -49,10 +49,10 @@ export default function RootLayout({
             <div className={`sidebar-menu ${isMenuOpen ? 'active' : ''}`}>
               <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
               <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
-              <Link href="/courses" onClick={() => setIsMenuOpen(false)}>Courses</Link>
-              <Link href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-              <Link href="/#reviews" onClick={() => setIsMenuOpen(false)}>Reviews</Link>
-              <Link href="/#faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+              <Link href="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>  
+              <Link href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>  
+              {/* <Link href="/#reviews" onClick={() => setIsMenuOpen(false)}>Reviews</Link>
+              <Link href="/#faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link> */}
             </div>
           </div>
         </header>
