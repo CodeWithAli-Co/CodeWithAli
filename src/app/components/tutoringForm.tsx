@@ -60,7 +60,7 @@ export function TutoringForm() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded  text-black"
                 />
 
                 <input 
@@ -68,7 +68,7 @@ export function TutoringForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded  text-black"
                 />
 
                 <input 
@@ -76,7 +76,7 @@ export function TutoringForm() {
                     value={hours}
                     onChange={(e) => setHours(Number(e.target.value))}
                     placeholder="How many hours per week"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded  text-black"
                 />
 
                 <input 
@@ -84,13 +84,13 @@ export function TutoringForm() {
                     value={startingTime}
                     onChange={(e) => setStartingTime(e.target.value)}
                     placeholder="When would you like to start"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded  text-black"
                 />
 
                 <select
                     value={supportStatus}
                     onChange={(e) => setSupportStatus(e.target.value)}
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded  text-black"
                 >
                     <option value="" disabled>
                         Select your status
