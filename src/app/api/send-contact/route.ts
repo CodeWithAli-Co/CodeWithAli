@@ -2,7 +2,7 @@ import { EmailContact } from '@/app/components/email-contact';
 import React from 'react';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_KEY);
+const resend = new Resend(process.env.RESEND_KEY as string);
 
 export async function POST(req: any) {
   // Need to check if the mothod comming in is POST
