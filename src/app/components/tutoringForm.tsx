@@ -55,6 +55,7 @@ export function TutoringForm() {
     return (
         <form className="max-w-2xl mx-auto space-y-6 p-4">
             <div className="space-y-4">
+            <h6>What is your name</h6>
                 <input 
                     type="text" 
                     value={name}
@@ -62,7 +63,7 @@ export function TutoringForm() {
                     placeholder="Name"
                     className="w-full p-2 border rounded  text-black"
                 />
-
+            <h6>What is your email</h6>
                 <input 
                     type="email"
                     value={email}
@@ -70,15 +71,16 @@ export function TutoringForm() {
                     placeholder="Email"
                     className="w-full p-2 border rounded  text-black"
                 />
-
+                <h6>How many hours would you like to commit per week</h6>
                 <input 
+                    
                     type="number"
                     value={hours}
                     onChange={(e) => setHours(Number(e.target.value))}
                     placeholder="How many hours per week"
                     className="w-full p-2 border rounded  text-black"
                 />
-
+                <h6>When will you like to start</h6>
                 <input 
                     type="text"
                     value={startingTime}
@@ -86,7 +88,7 @@ export function TutoringForm() {
                     placeholder="When would you like to start"
                     className="w-full p-2 border rounded  text-black"
                 />
-
+                 <h6>What is your current status</h6>
                 <select
                     value={supportStatus}
                     onChange={(e) => setSupportStatus(e.target.value)}
