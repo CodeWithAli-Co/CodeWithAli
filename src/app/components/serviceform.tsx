@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 import { create } from 'zustand';
+import "../Styles/info-cards.css"
 
 interface FormDataState {
   name: string
@@ -163,27 +164,6 @@ export function ServiceForm() {
       </div>
 
       {/* Service Selection */}
-      {/* <div>
-        <label className="block text-sm font-medium mb-2 text-white">
-          Service Needed:
-        </label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className={`p-4 border rounded-lg cursor-pointer transition-all ${
-                formData.service === service.id
-                  ? 'border-blue-500 bg-blue-50'
-                  : 'hover:border-gray-400'
-              }`}
-              onClick={() => setFormData({ ...formData, service: service.id })}
-            >
-              <h3 className="font-medium">{service.name}</h3>
-              <p className="text-sm text-gray-600">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div> */}
 
       {/* Budget Range */}
       <div>

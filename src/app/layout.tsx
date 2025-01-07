@@ -3,9 +3,9 @@ import { useState } from "react";
 import Image from "next/image";
 // Update the import path to point to public
 import alipic from "../../public/alipic.png";
-import "./globals.css";
+import "./Styles/globals.css";
 import Link from "next/link";
-import "./mediaSizing.css"
+import "./Styles/mediaSizing.css"
 
 export default function RootLayout({
   children,
