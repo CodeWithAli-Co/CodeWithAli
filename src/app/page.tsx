@@ -108,7 +108,7 @@ export default function Home() {
         <p>Email: unfold@codewithali.com</p>
         <Link href='/contact' className="btn-submit">Send Message</Link>
       </section>
-      <section className="faqs" id="faq">
+      {/* <section className="faqs" id="faq">
         <h2>FAQ</h2>
         <div className="faq-grid">
           <div className="faq-card">
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <footer>&copy; 2025 CodeWithAli. All rights reserved.</footer>
     </>
   );

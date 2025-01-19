@@ -12,11 +12,9 @@ export default function EducationService() {
   return (
     <>
       <h3>Coding Education Service</h3>
-      {/* <button type="button" className="btn-submit" onClick={() => Click()}>
-        Apply
-      </button> */}
-      {/* {goTo ?  : null} */}
-      <TutoringForm />
+   
+      {goTo ? <TutoringForm /> : null}
+      
     </>
   );
 }
