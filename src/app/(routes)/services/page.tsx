@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useFormDataStore } from "../../components/serviceform";
+import { PromotionsSection } from "@/app/components/promotions";
 
 const services = [
   {
@@ -75,14 +76,14 @@ export default function Services() {
                   {serv.longDescription}
                 </p>
                 <a href="#" className="read-more">
-                  Learn more <span className="sr-only">about {serv.name}</span>
+                  Learn more <span className="sr-only">about{serv.name}</span>
                 </a>
               </div>
             </div>
           </article>
         ))}
       </section>
-
+        <PromotionsSection />
       <section style={{ 
         textAlign: 'center', 
         padding: '3rem 0',
@@ -107,7 +108,6 @@ export default function Services() {
           Get in Touch
         </Link>
       </section>
-      
       <footer style={{ 
         textAlign: 'center', 
         padding: '2rem',
