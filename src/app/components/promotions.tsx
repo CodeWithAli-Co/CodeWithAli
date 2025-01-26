@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Fragment } from "react";
 
@@ -8,6 +9,7 @@ import { Card } from "@/components/Card";
 import ImageCoat from "@/assetes/images/Coat.jpg";
 import AdidasCap from "@/assetes/images/AdidasCap.jpg";
 import YESKISShoes from "@/assetes/images/Shoes.jpg";
+
 
 const testimonials = [
   {
@@ -47,7 +49,7 @@ export const PromotionsSection = () => {
       >
         <div className="flex gap-6 items-start">
           {/* Left Side - Clickable Image */}
-          <a href={testimonial.Link || "#"}
+          <Link href={testimonial.Link || "#"}
            target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0"
@@ -57,7 +59,7 @@ export const PromotionsSection = () => {
               width={100}
               height={150}
             />
-          </a>
+          </Link>
           <div>
             {/* Name and Position */}
             <div className="font-semibold text-lg">{testimonial.name}</div>
@@ -66,14 +68,13 @@ export const PromotionsSection = () => {
       
             {/* Link */}
             {testimonial.Link && (
-              <a
+              <Link
                 href={testimonial.Link}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="mt-4 inline-block text-blue-500 hover:underline text-sm"
               >
                 Buy Now
-              </a>
+              </Link>
             )}
           </div>
         </div>
