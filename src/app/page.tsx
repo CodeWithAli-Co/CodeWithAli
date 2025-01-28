@@ -1,9 +1,7 @@
-'use client'
-
-import { FlashMessages } from "./components/FlashMessage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { FlashMessages } from "./components/FlashMessage";
+import { PromotionsSection } from "@/app/components/promotions";
 
 
 export default function Home() {
@@ -83,6 +81,9 @@ export default function Home() {
             </p>
           </div>
         </div>
+       <div>
+       <PromotionsSection />
+    </div>
       </section>
       <section className="reviews">
         <h2>Reviews</h2>
@@ -106,7 +107,7 @@ export default function Home() {
       <section className="contact" id="contact">
         <h2>Contact Us</h2>
         <p>Email: unfold@codewithali.com</p>
-        <Link href='/contact' className="btn-submit">Send Message</Link>
+        <Link href='/contact' className="btn-submit mt-4">Send Message</Link>
       </section>
       {/* <section className="faqs" id="faq">
         <h2>FAQ</h2>
