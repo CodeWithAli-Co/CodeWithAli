@@ -9,6 +9,8 @@ const nextConfig = {
             test: /\.(png|jpg|jpeg|gif|svg)$/i,
             type: 'asset/resource'
         });
+
+        
         config.cache = false;
         return config;
     }

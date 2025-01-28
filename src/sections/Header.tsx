@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 import ThemeToggle from "@/components/ModeToggle";
-
-import Image from "next/image";
-import React from "react";
-
 
 
 const Header = () => {
@@ -53,7 +49,10 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div className="mobile-menu">
-        <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           {isMenuOpen ? "✕" : "☰"}
         </button>
         <div className={`sidebar-menu ${isMenuOpen ? "active" : ""}`}>
@@ -74,3 +73,4 @@ const Header = () => {
 };
 
 export default Header;
+
