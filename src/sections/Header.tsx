@@ -47,14 +47,17 @@ const Header = () => {
         <ThemeToggle />
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu */} 
       <div className="mobile-menu">
+       <div className="px-4">
         <button
           className="menu-toggle"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? "✕" : "☰"}
         </button>
+        <div className="px-8"> <ThemeToggle /></div>
+        </div>
         <div className={`sidebar-menu ${isMenuOpen ? "active" : ""}`}>
           {links.map(({ href, label }) => (
             <Link
