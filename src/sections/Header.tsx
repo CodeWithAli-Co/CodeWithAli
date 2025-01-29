@@ -36,7 +36,7 @@ const Header = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="nav-links desktop-nav">
+      <nav className="nav-links desktop-nav dark:text-slate-300">
         {links.map(({ href, label }) => (
           <Link
             key={href}

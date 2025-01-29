@@ -87,7 +87,7 @@ export default function Services() {
       <section style={{ 
         textAlign: 'center', 
         padding: '3rem 0',
-        background: '#f8f9fa',
+        // background: '#f8f9fa',
         marginTop: '2rem'
       }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Contact Us</h2>

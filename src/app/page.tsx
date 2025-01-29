@@ -111,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact dark:bg-[rgba(31,31,31,0.9)]" id="contact">
+      <section className="contact" id="contact">
         <h2>Contact Us</h2>
         <p>Email: unfold@codewithali.com</p>
         <Link href='/contact' className="btn-submit mt-4">Send Message</Link>

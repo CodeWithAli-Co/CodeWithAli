@@ -38,9 +38,8 @@
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  /* color: var(--text-color); */
   overflow-x: hidden;
-  background-attachment: fixed;
+  background: var(--background);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
@@ -63,8 +62,9 @@ body {
 }
 
 header {
-  background: rgba(31, 31, 31, 0.8);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 185, 185, 0.905);
+  border-radius: 2px; 
+  background: rgba(255, 255, 255, 0.1);  
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -103,12 +103,11 @@ header {
 }
 
 .nav-links a {
-  color: var(--text-color);
   margin: 0 15px;
   text-decoration: none;
   font-size: 18px;
   position: relative;
-  padding: 5px 10px; /* Add padding for the box effect */
+  padding: 5px 10px;
   transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -255,14 +254,14 @@ header {
   }
 }
 
-.courses {
+/* .courses {
   color: var(--card-foreground);
   padding: 100px 20px;
   border-radius: 30px 30px 0 0;
   position: relative;
   z-index: 2;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .reviews,
 .faqs,
@@ -270,12 +269,11 @@ header {
   color: var(--card-foreground);
   padding: 100px 20px;
   text-align: center;
-  /* background-color: rgba(31, 31, 31, 0.9); */
   margin-top: 2%;
   border-radius: 30px 30px 0 0;
   position: relative;
   z-index: 2;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1); */
 }
 
 h2 {
@@ -306,7 +304,6 @@ h2 {
 .faq-card,
 .about-card {
   background: var(--card);
-  color: var(--card-foreground);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -362,7 +359,7 @@ h2 {
   border-radius: 30px 30px 0 0;
   position: relative;
   z-index: 2;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1); */
 }
 
 
@@ -465,12 +462,14 @@ footer {
   align-items: center;
 }
 
+
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: hsla(0, 0%, 80%);
+    --card: hsl(215, 16%, 83%);
+    --card-foreground: hsl(0, 0%, 10%);
     --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 0 0% 9%;
@@ -494,10 +493,10 @@ footer {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: hsl(0, 0%, 20%);
+    --card: hsl(0, 0%, 15%);
+    --card-foreground: hsl(0, 0%, 90%);
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
@@ -518,19 +517,5 @@ footer {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  :root {
-    --background: hsl(0, 0%, 100%);
-    --card: hsl(215, 16%, 83%);
-    --card-foreground: hsl(0, 0%, 10%);
-  }
-
-  .dark {
-    --background: hsl(0, 0%, 10%);
-    --card: hsl(0, 0%, 15%);
-    --card-foreground: hsl(0, 0%, 90%);
   }
 }
