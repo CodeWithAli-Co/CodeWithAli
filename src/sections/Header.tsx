@@ -24,6 +24,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
+        <Link href="/">
         <Image
           src="/alipic.png"
           alt="CodeWithAli"
@@ -31,6 +32,7 @@ const Header = () => {
           width={100}
           height={100}
         />
+        </Link>
       </div>
 
       {/* Desktop Navigation */}
@@ -58,13 +60,14 @@ const Header = () => {
         </button>
         <div className="px-8"> <ThemeToggle /></div>
         </div>
-        <div className={`sidebar-menu ${isMenuOpen ? "active" : ""}`}>
+        <div className={`sidebar-menu ${isMenuOpen ? "active" : ""}`}
+        >
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={closeMenu}
-              className={pathname === href ? "active" : ""}
+              className={pathname === href ? "activ" : ""}
             >
               {label}
             </Link>
