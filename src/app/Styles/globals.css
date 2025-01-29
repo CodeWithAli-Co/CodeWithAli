@@ -256,8 +256,8 @@ header {
 }
 
 .courses {
+  color: var(--card-foreground);
   padding: 100px 20px;
-  background-color: rgba(31, 31, 31, 0.9);
   border-radius: 30px 30px 0 0;
   position: relative;
   z-index: 2;
@@ -267,9 +267,10 @@ header {
 .reviews,
 .faqs,
 .abouts {
+  color: var(--card-foreground);
   padding: 100px 20px;
   text-align: center;
-  background-color: rgba(31, 31, 31, 0.9);
+  /* background-color: rgba(31, 31, 31, 0.9); */
   margin-top: 2%;
   border-radius: 30px 30px 0 0;
   position: relative;
@@ -299,11 +300,13 @@ h2 {
   margin-bottom: 50px;
 
 }
+
 .course-card,
 .review,
 .faq-card,
 .about-card {
-  background: var(--background-dark);
+  background: var(--card);
+  color: var(--card-foreground);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -355,7 +358,6 @@ h2 {
   align-items: center;
   padding: 100px 20px;
   text-align: center;
-  background-color: rgba(31, 31, 31, 0.9);
   margin-top: -3%;
   border-radius: 30px 30px 0 0;
   position: relative;
@@ -520,10 +522,15 @@ footer {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    --background: hsl(0, 0%, 100%);
+    --card: hsl(215, 16%, 83%);
+    --card-foreground: hsl(0, 0%, 10%);
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .dark {
+    --background: hsl(0, 0%, 10%);
+    --card: hsl(0, 0%, 15%);
+    --card-foreground: hsl(0, 0%, 90%);
   }
 }

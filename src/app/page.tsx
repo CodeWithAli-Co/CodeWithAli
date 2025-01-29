@@ -1,7 +1,8 @@
-'use client'
+"use client"
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 import { FlashMessages } from "./components/FlashMessage";
 import { PromotionsSection } from "@/app/components/promotions";
 
@@ -35,6 +36,7 @@ export default function Home() {
           {/* <Image src={alipic} alt="Hero Image" className="logo" /> */}
         </div>
       </section>
+
       <section className="about" id="about">
         <h2>About CodeWithAli</h2>
         <div className="about-grid">
@@ -44,12 +46,13 @@ export default function Home() {
               seminars. Our mission is to make coding accessible and enjoyable
               for everyone.
             </h3>
-            <Link className="btn-submit" href="/about">
+            <Link className="btn-submit mt-4" href="/about">
               Learn More About Us
             </Link>
           </div>
         </div>
       </section>
+      
       <section className="courses" id="services">
         <h2>Our services</h2>
         <div className="course-grid">
@@ -87,6 +90,7 @@ export default function Home() {
        <PromotionsSection />
     </div>
       </section>
+
       <section className="reviews">
         <h2>Reviews</h2>
         <div className="review-grid">
@@ -106,11 +110,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="contact" id="contact">
+
+      <section className="contact dark:bg-[rgba(31,31,31,0.9)]" id="contact">
         <h2>Contact Us</h2>
         <p>Email: unfold@codewithali.com</p>
         <Link href='/contact' className="btn-submit mt-4">Send Message</Link>
       </section>
+
       {/* <section className="faqs" id="faq">
         <h2>FAQ</h2>
         <div className="faq-grid">

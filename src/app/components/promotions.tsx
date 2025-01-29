@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 import { Card } from "@/components/Card";
-
 import ImageCoat from "@/assetes/images/Coat.jpg";
 import AdidasCap from "@/assetes/images/AdidasCap.jpg";
 import YESKISShoes from "@/assetes/images/Shoes.jpg";
@@ -64,7 +63,7 @@ export const PromotionsSection = () => {
             {/* Name and Position */}
             <div className="font-semibold text-lg">{testimonial.name}</div>
             {/* Description */}
-            <p className="mt-4 text-sm text-gray-700">{testimonial.text}</p>
+            <p className="mt-4 text-sm text-gray-700 dark:text-gray-400">{testimonial.text}</p>
       
             {/* Link */}
             {testimonial.Link && (
