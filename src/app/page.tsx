@@ -1,140 +1,101 @@
-'use client'
-
-import { FlashMessages } from "./components/FlashMessage";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-
-
+import Image from "next/image";
 
 export default function Home() {
-  const router = useRouter();
   return (
-    <>
-      <section className="hero" id="hero">
-        <div className="hero-text">
-          {/* {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                {% for category, message in messages %}
-                <div className="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-                {% endfor %}
-                {% endif %}
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li className="mb-2">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              src/app/page.tsx
+            </code>
+            .
+          </li>
+          <li>Save and see your changes instantly.</li>
+        </ol>
 
-                {% endwith %} */}
-          <FlashMessages />
-
-          <h1>Welcome to CodeWithAli!</h1>
-          <p>Explore our services and start learning today!</p>
-          <Link href="#services" className="btn">
-            Get Started
-          </Link>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
         </div>
-        <div className="hero-image">
-          {/* <img src="{{ url_for('static', filename='alipic.png') }}" alt="Hero Image"> */}
-          {/* <Image src={alipic} alt="Hero Image" className="logo" /> */}
-        </div>
-      </section>
-      <section className="about" id="about">
-        <h2>About CodeWithAli</h2>
-        <div className="about-grid">
-          <div className="about-card">
-            <h3>
-              CodeWithAli is your go-to platform for personal coding lessons and
-              seminars. Our mission is to make coding accessible and enjoyable
-              for everyone.
-            </h3>
-            <Link className="btn-submit" href="/about">
-              Learn More About Us
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="courses" id="services">
-        <h2>Our services</h2>
-        <div className="course-grid">
-          <div className="course-card">
-            <h3>Introduction to Python</h3>
-            <p>
-              Learn the basics of Python programming in this comprehensive
-              course.
-            </p>
-          </div>
-          <div className="course-card">
-            <h3>Web Development Bootcamp</h3>
-            <p>
-              Master the fundamentals of web development with HTML, CSS, and
-              JavaScript.
-            </p>
-          </div>
-          <div className="course-card">
-            <h3>Data Science with Python</h3>
-            <p>
-              Get started with data science and learn how to analyze data using
-              Python.
-            </p>
-          </div>
-          <div className="course-card">
-            <h3>Learning Java for Beginners</h3>
-            <p>
-              Once you feel like you have advanced in Python, it's time to take
-              it up to the next level and learn the more advanced language,
-              Java.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="reviews">
-        <h2>Reviews</h2>
-        <div className="review-grid">
-          <div className="review">
-            <p>
-              "CodeWithAli has been an amazing experience! The lessons are clear
-              and easy to follow."
-            </p>
-            <p>- Student A</p>
-          </div>
-          <div className="review">
-            <p>
-              "I've learned so much from the seminars. Highly recommend for
-              anyone looking to improve their coding skills!"
-            </p>
-            <p>- Student B</p>
-          </div>
-        </div>
-      </section>
-      <section className="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: unfold@codewithali.com</p>
-        <Link href='/contact' className="btn-submit">Send Message</Link>
-      </section>
-      {/* <section className="faqs" id="faq">
-        <h2>FAQ</h2>
-        <div className="faq-grid">
-          <div className="faq-card">
-            <h3>Q: How much do you cost?</h3>
-            <p>A: Only 10 USD</p>
-            <div className="btn-info">
-              <Link href="#">Detailed Answer</Link>
-            </div>
-          </div>
-          <div className="faq-card">
-            <h3>Q: How much do you cost?2</h3>
-            <p>A: Only 10 USD</p>
-            <div className="btn-info">
-              <Link href="#">Detailed Answer</Link>
-            </div>
-          </div>
-          <div className="faq-card">
-            <h3>Q: How much do you cost?3</h3>
-            <p>A: Only 10 USD</p>
-            <div className="btn-info">
-              <Link href="#">Detailed Answer</Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      <footer>&copy; 2025 CodeWithAli. All rights reserved.</footer>
-    </>
+      </main>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
+      </footer>
+    </div>
   );
 }
