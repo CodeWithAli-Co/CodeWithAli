@@ -71,13 +71,13 @@ export default function Services() {
               </figure>
               <div className="article-body">
                 <h2>{serv.name}</h2>
-                <p style={{ marginBottom: '1.5rem' }}>{serv.description}</p>
+                <p className="mb-6 text-black">{serv.description}</p>
                 <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '1.5rem' }}>
                   {serv.longDescription}
                 </p>
-                <a href="#" className="read-more">
+                <Link href="#" className="read-more">
                   Learn more <span className="sr-only">about{serv.name}</span>
-                </a>
+                </Link>
               </div>
             </div>
           </article>
