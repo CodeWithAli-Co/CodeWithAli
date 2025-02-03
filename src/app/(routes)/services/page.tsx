@@ -54,10 +54,10 @@ export default function Services() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <section className="articles" style={{ flex: 1, maxWidth: '1400px', margin: '2rem auto' }}>
+      <section className="articles " style={{ flex: 1, maxWidth: '1400px', margin: '2rem auto' }}>
         {services.map((serv) => (
           <article key={serv.id} onClick={() => goCourse(serv.id, serv.route)} style={{ minHeight: '500px' }}>
-            <div className="article-wrapper">
+            <div className="article-wrapper bg-slate-300 dark:bg-gray-800">
               <figure style={{ minHeight: '250px' }}>
                 <img 
                   src={serv.image} 
@@ -70,9 +70,9 @@ export default function Services() {
                 />
               </figure>
               <div className="article-body">
-                <h2>{serv.name}</h2>
-                <p className="mb-6 text-black">{serv.description}</p>
-                <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '1.5rem' }}>
+                <h2 className="text-black dark:text-white">{serv.name}</h2>
+                <p className="mb-6 text-gray-900 dark:text-gray-200">{serv.description}</p>
+                <p className="text-gray-700 dark:text-gray-400" style={{ fontSize: '0.95rem', marginBottom: '1.5rem' }}>
                   {serv.longDescription}
                 </p>
                 <Link href="#" className="read-more">
@@ -87,7 +87,6 @@ export default function Services() {
       <section style={{ 
         textAlign: 'center', 
         padding: '3rem 0',
-        // background: '#f8f9fa',
         marginTop: '2rem'
       }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Contact Us</h2>
