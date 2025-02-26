@@ -2,6 +2,11 @@ import { EmailService } from '@/app/components/email-service';
 import React from 'react';
 import { Resend } from 'resend';
 
+// simply checks if you have the env key and its connected
+if (!process.env.RESEND_KEY) {
+  throw new Error('RESEND_KEY is not defined in environment variables');
+}
+
 const resend = new Resend(process.env.RESEND_KEY);
 
 export async function POST(req: any) {
