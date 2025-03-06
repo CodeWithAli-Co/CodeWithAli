@@ -18,7 +18,7 @@ import {
   CheckCircle,
   Users,
   Palette,
-  Rocket,
+
   ArrowRight,
   Menu,
   X,
@@ -230,7 +230,7 @@ const HomePage = () => {
                   </div>
                   <div className="aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                     <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
-                      <Rocket className="h-12 w-12 text-red-500/60" />
+                      <ShoppingBag className="h-12 w-12 text-red-500/60" />
                     </div>
                   </div>
                 </div>
@@ -468,7 +468,7 @@ const HomePage = () => {
                 number: "04",
                 title: "Deployment",
                 description: "We launch your project, provide training, and offer ongoing support as needed.",
-                icon: Rocket
+                icon: ShoppingBag
               }
             ].map((step, index) => (
               <motion.div
