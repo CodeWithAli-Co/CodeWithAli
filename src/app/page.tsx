@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 import {
   ChevronRight,
   Code,
