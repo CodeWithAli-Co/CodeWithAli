@@ -37,14 +37,14 @@ const staggerContainer = {
   }
 };
 
-// Services data
+// Services data with corrected href paths
 const services = [
   {
     title: "Website Development",
     description: "Custom-designed responsive websites optimized for performance and conversions",
     icon: Code,
     color: "from-red-600 to-red-800",
-    href: "/services/website-development",
+    href: "/services/web-development", // Changed from website-development to match your folder
     features: ["Responsive Design", "SEO Optimization", "Content Management", "Performance Tuning"]
   },
   {
@@ -52,7 +52,7 @@ const services = [
     description: "Native and cross-platform mobile applications for iOS and Android",
     icon: Smartphone,
     color: "from-red-700 to-red-900",
-    href: "/services/mobile-app-development",
+    href: "/services/mobile-app-development", // This one works because it matches your folder
     features: ["iOS & Android Apps", "Cross-Platform Solutions", "App Store Deployment", "Maintenance & Updates"]
   },
   {
@@ -60,7 +60,7 @@ const services = [
     description: "User-focused designs that enhance engagement and simplify interactions",
     icon: Palette,
     color: "from-red-800 to-red-950",
-    href: "/services/ui-ux-design",
+    href: "/services/UI\\UX-Design", // Changed to match your folder structure
     features: ["User Research", "Interface Design", "Usability Testing", "Design Systems"]
   },
   {
@@ -68,7 +68,7 @@ const services = [
     description: "Fully-featured online stores with secure payment processing and inventory management",
     icon: ShoppingBag,
     color: "from-red-600 to-red-800",
-    href: "/services/ecommerce-solutions",
+    href: "/services/E-Commerse", // Changed to match your folder structure
     features: ["Product Catalogs", "Payment Processing", "Inventory Management", "Customer Management"]
   },
   {
@@ -76,7 +76,7 @@ const services = [
     description: "Data-driven strategies to improve visibility and ranking in search engines",
     icon: Search,
     color: "from-red-700 to-red-900",
-    href: "/services/seo-optimization",
+    href: "/services/seo-optimization", // You'll need to create this folder
     features: ["Keyword Research", "On-Page SEO", "Content Strategy", "Analytics & Reporting"]
   },
   {
@@ -84,7 +84,7 @@ const services = [
     description: "Reliable hosting services with regular updates, backups, and security monitoring",
     icon: Server,
     color: "from-red-800 to-red-950",
-    href: "/services/web-hosting-maintenance",
+    href: "/services/Web-hosting", // Changed to match your folder structure
     features: ["Managed Hosting", "Security Updates", "Performance Monitoring", "Regular Backups"]
   }
 ];
