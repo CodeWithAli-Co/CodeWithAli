@@ -345,6 +345,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
   {/* 2. IMPROVED PROJECT DISPLAY */}
 
@@ -397,6 +398,74 @@ const HomePage = () => {
                   <MoveUpRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
+=======
+      <section className="courses" id="services">
+        <h2>Our services</h2>
+        <div className="course-grid">
+          <div className="course-card">
+            <h3>Introduction to Python</h3>
+            <p>
+              Learn the basics of Python programming in this comprehensive
+              course.
+            </p>
+          </div>
+          <div className="course-card">
+            <h3>Web Development Bootcamp</h3>
+            <p>
+              Master the fundamentals of web development with HTML, CSS, and
+              JavaScript.
+            </p>
+          </div>
+          <div className="course-card">
+            <h3>Data Science with Python</h3>
+            <p>
+              Get started with data science and learn how to analyze data using
+              Python.
+            </p>
+          </div>
+          <div className="course-card">
+            <h3>Learning Java for Beginners</h3>
+            <p>
+              Once you feel like you have advanced in Python, it's time to take
+              it up to the next level and learn the more advanced language,
+              Java.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="reviews">
+        <h2>Reviews</h2>
+        <div className="review-grid">
+          <div className="review">
+            <p>
+              "CodeWithAli has been an amazing experience! The lessons are clear
+              and easy to follow."
+            </p>
+            <p>- Student A</p>
+          </div>
+          <div className="review">
+            <p>
+              "I've learned so much from the seminars. Highly recommend for
+              anyone looking to improve their coding skills!"
+            </p>
+            <p>- Student B</p>
+          </div>
+        </div>
+      </section>
+      <section className="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: unfold@codewithali.com</p>
+        <Link href='/contact' className="btn-submit">Send Message</Link>
+      </section>
+      {/* <section className="faqs" id="faq">
+        <h2>FAQ</h2>
+        <div className="faq-grid">
+          <div className="faq-card">
+            <h3>Q: How much do you cost?</h3>
+            <p>A: Only 10 USD</p>
+            <div className="btn-info">
+              <Link href="#">Detailed Answer</Link>
+>>>>>>> 562065229edaeacee17b03e620a7f9c6f1dab561
             </div>
           </div>
           
@@ -568,6 +637,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </section>
 
      {/* 1. CONTACT FORM IMPROVEMENTS */}
@@ -833,6 +903,11 @@ function NavLink({ href, children }: NavLinkProps) {
     >
       {children}
     </a>
+=======
+      </section> */}
+      <footer>&copy; 2025 CodeWithAli. All rights reserved.</footer>
+    </>
+>>>>>>> 562065229edaeacee17b03e620a7f9c6f1dab561
   );
 }
 
