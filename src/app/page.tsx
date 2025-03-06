@@ -1,14 +1,14 @@
 "use client"
+import ClientsSection from "@/MyCompenents/ClientsSection";
+import ContactSection from "@/MyCompenents/ContactSection";
+import CTASection from "@/MyCompenents/CTASection";
+import Footer from "@/MyCompenents/Footer";
+import HeroSection from "@/MyCompenents/HeroSection";
+import ProcessSection from "@/MyCompenents/ProcessSection";
+import ServicesSection from "@/MyCompenents/ServiceSection";
+import TestimonialsSection from "@/MyCompenents/TestimonialSection";
+import WorkSection from "@/MyCompenents/WorkSection";
 import React from "react";
-import HeroSection from "@/components/sections/HeroSection";
-import ClientsSection from "@/components/sections/ClientsSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import WorkSection from "@/components/sections/WorkSection";
-import ProcessSection from "@/components/sections/ProcessSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ContactSection from "@/components/sections/ContactSection";
-import CTASection from "@/components/sections/CTASection";
-import Footer from "@/components/sections/Footer";
 
 const HomePage = () => {
   return (
