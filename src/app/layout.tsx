@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className="logo-container flex items-center">
             <div className="flex items-center">
               <Image 
-                src="/alipic.png"
+                src="/codewithali.png"
                 alt="CodeWithAli" 
                 className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
                 width={70}
@@ -169,8 +169,8 @@ export default function RootLayout({
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+1234567890" className="text-red-200/60 hover:text-red-300 transition-colors">
-                    (123) 456-7890
+                  <a href="tel:+4086907890" className="text-red-200/60 hover:text-red-300 transition-colors">
+                    (408) 690-4009
                   </a>
                 </li>
                 <li>
