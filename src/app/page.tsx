@@ -346,8 +346,8 @@ const HomePage = () => {
         </div>
       </section>
 
-    // 2. IMPROVED PROJECT DISPLAY
-// Replace the portfolio projects section with this enhanced version
+  {/* 2. IMPROVED PROJECT DISPLAY */}
+
 <section id="work" className="py-20 md:py-24 bg-red-950/10">
   <div className="container mx-auto px-4 md:px-8 lg:px-12">
     <div className="text-center mb-16">
