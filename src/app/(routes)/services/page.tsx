@@ -1,57 +1,21 @@
-"use client";
-
-// import { useState } from "react";
-import Link from "next/link";
+"use client"
+import React from "react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useFormDataStore } from "../../components/serviceform";
+import {
+  ChevronRight,
+  Code,
+  Smartphone,
+  Layers,
+  Server,
+  Search,
+  ShoppingBag,
+  Palette,
+  ArrowRight
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
-import { ArrowRight, Code, Terminal, FileCode, HeartHandshake, Send } from "lucide-react";
-
-const services = [
-  {
-    id: 'teaching',
-    name: 'Coding Education',
-    description: 'Learn to code with personalized tutoring sessions',
-    longDescription: 'Transform your coding journey with our expert-led tutoring sessions. Whether you\'re a beginner or looking to advance your skills, our personalized approach ensures you learn at your own pace while mastering industry-standard practices.',
-    route: 'education',
-    image: '/bug.jpg',
-    icon: Code,
-    color: "from-red-600 to-red-800"
-  },
-  {
-    id: 'debugging',
-    name: 'Bug Fixing',
-    description: 'Get help with technical issues and bugs',
-    longDescription: 'Facing frustrating bugs or technical challenges? Our experienced developers will help identify and resolve issues efficiently, ensuring your project stays on track. We provide detailed explanations of solutions to prevent future occurrences.',
-    route: 'bugfix',
-    image: '/bug.jpg',
-    icon: Terminal,
-    color: "from-red-700 to-red-900"
-  },
-  {
-    id: 'consulting',
-    name: 'Technical Consulting',
-    description: 'Expert advice on your tech projects',
-    longDescription: 'Leverage our expertise to make informed decisions about your technology stack, architecture, and development processes. We provide strategic guidance to help you build scalable, maintainable solutions.',
-    route: 'techconsult',
-    image: '/consulting.png',
-    icon: HeartHandshake,
-    color: "from-red-800 to-red-950"
-  },
-  {
-    id: 'development',
-    name: 'Custom Development',
-    description: 'Full application development services',
-    longDescription: 'From concept to deployment, we build custom applications tailored to your specific needs. Our full-stack development team ensures high-quality, scalable solutions using modern technologies and best practices.',
-    route: 'webdev',
-    image: '/consulting.png',
-    icon: FileCode,
-    color: "from-red-600 to-red-800"
-  }
-];
 
 // Animation variants
 const fadeIn = {
@@ -68,117 +32,218 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.1
     }
   }
 };
 
-export default function Services() {
-  const router = useRouter();
-  const { service, setService } = useFormDataStore();
+// Services data
+const services = [
+  {
+    title: "Website Development",
+    description: "Custom-designed responsive websites optimized for performance and conversions",
+    icon: Code,
+    color: "from-red-600 to-red-800",
+    href: "/services/website-development",
+    features: ["Responsive Design", "SEO Optimization", "Content Management", "Performance Tuning"]
+  },
+  {
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile applications for iOS and Android",
+    icon: Smartphone,
+    color: "from-red-700 to-red-900",
+    href: "/services/mobile-app-development",
+    features: ["iOS & Android Apps", "Cross-Platform Solutions", "App Store Deployment", "Maintenance & Updates"]
+  },
+  {
+    title: "UI/UX Design",
+    description: "User-focused designs that enhance engagement and simplify interactions",
+    icon: Palette,
+    color: "from-red-800 to-red-950",
+    href: "/services/ui-ux-design",
+    features: ["User Research", "Interface Design", "Usability Testing", "Design Systems"]
+  },
+  {
+    title: "E-commerce Solutions",
+    description: "Fully-featured online stores with secure payment processing and inventory management",
+    icon: ShoppingBag,
+    color: "from-red-600 to-red-800",
+    href: "/services/ecommerce-solutions",
+    features: ["Product Catalogs", "Payment Processing", "Inventory Management", "Customer Management"]
+  },
+  {
+    title: "SEO Optimization",
+    description: "Data-driven strategies to improve visibility and ranking in search engines",
+    icon: Search,
+    color: "from-red-700 to-red-900",
+    href: "/services/seo-optimization",
+    features: ["Keyword Research", "On-Page SEO", "Content Strategy", "Analytics & Reporting"]
+  },
+  {
+    title: "Web Hosting & Maintenance",
+    description: "Reliable hosting services with regular updates, backups, and security monitoring",
+    icon: Server,
+    color: "from-red-800 to-red-950",
+    href: "/services/web-hosting-maintenance",
+    features: ["Managed Hosting", "Security Updates", "Performance Monitoring", "Regular Backups"]
+  }
+];
 
-  const goToService = (servid: string, route: string) => {
-    setService(servid);
-    router.push(`/services/${route}`);
-  };
+const ServicesPage = () => {
+  const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-center mb-16"
+          <motion.div 
+            className="text-center max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">OUR SERVICES</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Expert Solutions for Your 
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Digital Challenges
+            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">OUR EXPERTISE</Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Comprehensive Digital
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
+                Services & Solutions
               </span>
             </h1>
-            <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-              From code education to custom development, we offer comprehensive services
-              to help you succeed in the digital world.
+            <p className="text-lg md:text-xl text-red-200/80 mb-8">
+              From website development to SEO optimization, we offer end-to-end digital 
+              solutions designed to help your business thrive in the digital landscape.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-700/10 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            {services.map((serv) => {
-              const ServiceIcon = serv.icon;
-              
-              return (
-                <motion.div
-                  key={serv.id}
-                  variants={fadeIn}
-                  className="h-full"
-                  onClick={() => goToService(serv.id, serv.route)}
-                >
-                  <Card className="bg-black/60 border-red-950/30 backdrop-blur-sm h-full overflow-hidden group transition-all duration-300 hover:border-red-800/50 hover:shadow-lg hover:shadow-red-950/20 cursor-pointer">
-                    <CardContent className="p-0 flex flex-col h-full">
-                      <div className="relative h-64 overflow-hidden">
-                        <div 
-                          className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"
-                        ></div>
-                        <img 
-                          src={serv.image} 
-                          alt={serv.name}
-                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className={`absolute top-4 left-4 w-12 h-12 rounded-lg bg-gradient-to-br ${serv.color} p-3 z-20`}>
-                          <ServiceIcon className="w-full h-full text-white" />
-                        </div>
+        
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="bg-black/60 border-red-950/30 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="mb-5">
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} p-3 mb-4 transform group-hover:scale-110 transition-transform`}>
+                        <service.icon className="w-full h-full text-white" />
                       </div>
+                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                      <p className="text-red-200/60 mb-4">{service.description}</p>
                       
-                      <div className="p-6 flex flex-col flex-grow">
-                        <h2 className="text-xl font-bold text-white mb-3">{serv.name}</h2>
-                        <p className="text-red-200/80 mb-4">{serv.description}</p>
-                        <p className="text-red-200/60 text-sm mb-6 flex-grow">
-                          {serv.longDescription}
-                        </p>
-                        <div className="mt-auto">
-                          <Button
-                            variant="ghost"
-                            className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
-                          >
-                            Learn more
-                            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                      <ul className="space-y-2 mb-5">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <ChevronRight className="h-4 w-4 text-red-500 mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-red-200/80 text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="mt-auto pt-4">
+                      <Button
+                        onClick={() => router.push(service.href)}
+                        className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Contact CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-red-950/10 to-black mt-auto">
+      {/* Process Overview */}
+      <section className="py-20 bg-red-950/10">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">OUR APPROACH</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Our Service Delivery Process
+              </h2>
+              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+                We follow a proven methodology to ensure successful outcomes for all our services.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                number: "01",
+                title: "Discovery",
+                description: "We begin by understanding your business, goals, target audience, and specific requirements.",
+                icon: Search
+              },
+              {
+                number: "02",
+                title: "Strategy",
+                description: "We develop a comprehensive strategy and detailed project plan tailored to your objectives.",
+                icon: Layers
+              },
+              {
+                number: "03",
+                title: "Execution",
+                description: "Our expert team implements the solution with regular updates and client feedback.",
+                icon: Code
+              },
+              {
+                number: "04",
+                title: "Support",
+                description: "We provide ongoing support, maintenance, and optimization to ensure long-term success.",
+                icon: Server
+              }
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <div className="bg-black/60 border border-red-950/30 rounded-xl p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mr-3">
+                      <span className="text-white font-bold">{step.number}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                  </div>
+                  <p className="text-red-200/60">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div 
             className="max-w-4xl mx-auto bg-black/60 border border-red-950/30 rounded-xl p-8 md:p-12 text-center"
@@ -187,24 +252,26 @@ export default function Services() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Reach out to discuss your project needs or schedule a consultation with our experts.
+            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
+              Contact us for a free consultation and let's discuss how our services can help you achieve your digital goals.
             </p>
-            <Link href="/#contact">
-              <Button 
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 py-6 text-lg"
-              >
-                <Send className="mr-2 h-5 w-5" />
-                Contact Us Now
-              </Button>
-            </Link>
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
+                text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+              onClick={() => router.push('/contact')}
+            >
+              Schedule a Consultation
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default ServicesPage;
