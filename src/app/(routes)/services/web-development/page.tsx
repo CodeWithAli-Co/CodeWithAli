@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ import {
   Search,
   Settings,
   ShieldCheck,
-  RefreshCw
+  RefreshCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,80 +30,109 @@ const fadeIn = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 // Process steps
 const processSteps = [
   {
     title: "Discovery and Requirements",
-    description: "We begin by understanding your business goals, target audience, and specific requirements through in-depth consultations. This phase includes competitor analysis, content planning, and technical specifications.",
-    icon: Search
+    description:
+      "We begin by understanding your business goals, target audience, and specific requirements through in-depth consultations. This phase includes competitor analysis, content planning, and technical specifications.",
+    icon: Search,
   },
   {
     title: "Planning and Architecture",
-    description: "We create a detailed project plan including site architecture, wireframes, and technical specifications that will guide the development process.",
-    icon: Layers
+    description:
+      "We create a detailed project plan including site architecture, wireframes, and technical specifications that will guide the development process.",
+    icon: Layers,
   },
   {
     title: "Design",
-    description: "Our designers create visual mockups and prototypes that align with your brand identity while ensuring an optimal user experience.",
-    icon: Palette
+    description:
+      "Our designers create visual mockups and prototypes that align with your brand identity while ensuring an optimal user experience.",
+    icon: Palette,
   },
   {
     title: "Development",
-    description: "Our developers build your website with clean, efficient code using modern frameworks and best practices for performance and security.",
-    icon: Code
+    description:
+      "Our developers build your website with clean, efficient code using modern frameworks and best practices for performance and security.",
+    icon: Code,
   },
   {
     title: "Testing and QA",
-    description: "We rigorously test your website across devices and browsers to ensure functionality, performance, and accessibility standards are met.",
-    icon: Settings
+    description:
+      "We rigorously test your website across devices and browsers to ensure functionality, performance, and accessibility standards are met.",
+    icon: Settings,
   },
   {
     title: "Launch and Training",
-    description: "We deploy your website to production servers and provide comprehensive training on content management and maintenance.",
-    icon: Zap
+    description:
+      "We deploy your website to production servers and provide comprehensive training on content management and maintenance.",
+    icon: Zap,
   },
   {
     title: "Maintenance and Support",
-    description: "We offer ongoing support, regular updates, performance monitoring, and continuous improvement to keep your website secure and effective.",
-    icon: RefreshCw
-  }
+    description:
+      "We offer ongoing support, regular updates, performance monitoring, and continuous improvement to keep your website secure and effective.",
+    icon: RefreshCw,
+  },
 ];
 
 // Technologies we use
 const technologies = [
-  { name: "React/Next.js", description: "For building interactive user interfaces with optimal performance" },
-  { name: "WordPress", description: "For content-focused websites with powerful CMS capabilities" },
-  { name: "Shopify", description: "For e-commerce websites with robust product management" },
-  { name: "Tailwind CSS", description: "For rapid, responsive design implementation" },
+  {
+    name: "React/Next.js",
+    description:
+      "For building interactive user interfaces with optimal performance",
+  },
+  {
+    name: "WordPress",
+    description: "For content-focused websites with powerful CMS capabilities",
+  },
+  {
+    name: "Shopify",
+    description: "For e-commerce websites with robust product management",
+  },
+  {
+    name: "Tailwind CSS",
+    description: "For rapid, responsive design implementation",
+  },
   { name: "Node.js", description: "For scalable backend development" },
-  { name: "GraphQL", description: "For efficient data querying and management" },
-  { name: "AWS/Vercel", description: "For reliable, scalable hosting solutions" }
+  {
+    name: "GraphQL",
+    description: "For efficient data querying and management",
+  },
+  {
+    name: "AWS/Vercel",
+    description: "For reliable, scalable hosting solutions",
+  },
 ];
 
 // Case studies (simplified for this example)
 const caseStudies = [
   {
     title: "E-commerce Platform Redesign",
-    description: "Revamped an outdated online store, resulting in 45% increase in conversions and 60% improved page load times.",
+    description:
+      "Revamped an outdated online store, resulting in 45% increase in conversions and 60% improved page load times.",
     industry: "Retail",
-    image: "/portfolio-1.jpg" 
+    image: "/portfolio-1.jpg",
   },
   {
     title: "Corporate Website Relaunch",
-    description: "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%.",
+    description:
+      "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%.",
     industry: "Financial Services",
-    image: "/portfolio-2.jpg"
+    image: "/portfolio-2.jpg",
   },
   {
     title: "SaaS Product Website",
-    description: "Created a conversion-focused website that helped the client increase trial signups by 52% within the first month.",
+    description:
+      "Created a conversion-focused website that helped the client increase trial signups by 52% within the first month.",
     industry: "Technology",
-    image: "/portfolio-3.jpg"
-  }
+    image: "/portfolio-3.jpg",
+  },
 ];
 
 const WebsiteDevelopmentPage = () => {
@@ -120,38 +149,41 @@ const WebsiteDevelopmentPage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div 
+            <motion.div
               className="lg:w-7/12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">WEBSITE DEVELOPMENT</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                WEBSITE DEVELOPMENT
+              </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Custom Website Development 
+                Custom Website Development
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block mt-2">
                   That Drives Results
                 </span>
               </h1>
               <p className="text-lg text-red-200/80 mb-8">
-                We design and develop stunning, high-performance websites that captivate your audience, 
-                establish your brand presence, and drive measurable business growth.
+                We design and develop stunning, high-performance websites that
+                captivate your audience, establish your brand presence, and
+                drive measurable business growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
+                <Button
                   size="lg"
                   className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                     text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
-                  onClick={() => router.push('/contact')}
+                  onClick={() => router.push("/contact")}
                 >
                   Get a Free Quote
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
-                  onClick={() => router.push('/portfolio')}
+                  onClick={() => router.push("/portfolio")}
                 >
                   View Our Work
                 </Button>
@@ -164,7 +196,7 @@ const WebsiteDevelopmentPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <div className="relative bg-black/60 border border-red-950/30 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-5">
+              <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-5">
                 {/* Website mockup illustration */}
                 <div className="w-full aspect-[4/3] bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4">
                   <div className="w-full h-full border-2 border-red-500/20 rounded-md relative">
@@ -176,7 +208,7 @@ const WebsiteDevelopmentPage = () => {
                         <div className="w-2 h-2 rounded-full bg-red-500/40"></div>
                       </div>
                     </div>
-                    
+
                     {/* Mock content */}
                     <div className="absolute top-8 left-2 right-2 bottom-2">
                       <div className="h-4 w-1/3 bg-red-500/40 rounded mb-2"></div>
@@ -208,12 +240,16 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">KEY FEATURES</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                KEY FEATURES
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 What Sets Our Website Development Apart
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                We combine technical expertise with creative design to deliver websites that not only look great but also perform exceptionally well.
+                We combine technical expertise with creative design to deliver
+                websites that not only look great but also perform exceptionally
+                well.
               </p>
             </motion.div>
           </div>
@@ -222,34 +258,40 @@ const WebsiteDevelopmentPage = () => {
             {[
               {
                 title: "Responsive Design",
-                description: "We build websites that adapt seamlessly to any device, ensuring an optimal user experience on desktops, tablets, and smartphones.",
-                icon: Smartphone
+                description:
+                  "We build websites that adapt seamlessly to any device, ensuring an optimal user experience on desktops, tablets, and smartphones.",
+                icon: Smartphone,
               },
               {
                 title: "Performance Optimization",
-                description: "Our websites are optimized for speed with efficient code, image optimization, and caching strategies for lightning-fast load times.",
-                icon: Zap
+                description:
+                  "Our websites are optimized for speed with efficient code, image optimization, and caching strategies for lightning-fast load times.",
+                icon: Zap,
               },
               {
                 title: "SEO-Friendly Structure",
-                description: "We implement SEO best practices from the ground up, ensuring your website ranks well in search engines and drives organic traffic.",
-                icon: Search
+                description:
+                  "We implement SEO best practices from the ground up, ensuring your website ranks well in search engines and drives organic traffic.",
+                icon: Search,
               },
               {
                 title: "Custom Functionality",
-                description: "From interactive elements to complex business logic, we develop custom features that meet your specific requirements.",
-                icon: Settings
+                description:
+                  "From interactive elements to complex business logic, we develop custom features that meet your specific requirements.",
+                icon: Settings,
               },
               {
                 title: "Security Measures",
-                description: "We implement robust security practices to protect your website and user data from vulnerabilities and threats.",
-                icon: ShieldCheck
+                description:
+                  "We implement robust security practices to protect your website and user data from vulnerabilities and threats.",
+                icon: ShieldCheck,
               },
               {
                 title: "Content Management",
-                description: "We build easy-to-use content management systems that empower you to update and maintain your website without technical knowledge.",
-                icon: RefreshCw
-              }
+                description:
+                  "We build easy-to-use content management systems that empower you to update and maintain your website without technical knowledge.",
+                icon: RefreshCw,
+              },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -258,13 +300,15 @@ const WebsiteDevelopmentPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-black/60 border-red-950/30 backdrop-blur-sm h-full">
+                <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mb-4">
                         <feature.icon className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {feature.title}
+                      </h3>
                       <p className="text-red-200/60">{feature.description}</p>
                     </div>
                   </CardContent>
@@ -285,12 +329,15 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">OUR PROCESS</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                OUR PROCESS
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 End-to-End Website Development Process
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                Our structured approach ensures a smooth development journey from concept to launch and beyond.
+                Our structured approach ensures a smooth development journey
+                from concept to launch and beyond.
               </p>
             </motion.div>
           </div>
@@ -304,16 +351,20 @@ const WebsiteDevelopmentPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-black/60 border-red-950/30 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-black/60 border-red-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-bold">{index + 1}</span>
+                        <span className="text-white font-bold">
+                          {index + 1}
+                        </span>
                       </div>
                       <div>
                         <div className="flex items-center mb-2">
                           <step.icon className="w-5 h-5 text-red-500 mr-2" />
-                          <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                          <h3 className="text-xl font-bold text-white">
+                            {step.title}
+                          </h3>
                         </div>
                         <p className="text-red-200/60">{step.description}</p>
                       </div>
@@ -336,12 +387,15 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">TECHNOLOGIES</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                TECHNOLOGIES
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Technologies We Utilize
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                We leverage cutting-edge technologies to build modern, high-performance websites.
+                We leverage cutting-edge technologies to build modern,
+                high-performance websites.
               </p>
             </motion.div>
           </div>
@@ -354,13 +408,17 @@ const WebsiteDevelopmentPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-black/60 border border-red-950/30 rounded-lg p-6"
+                className="bg-black/60 border border-red-900 rounded-lg p-6"
               >
                 <div className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-bold text-white mb-1">{tech.name}</h4>
-                    <p className="text-red-200/60 text-sm">{tech.description}</p>
+                    <h4 className="text-lg font-bold text-white mb-1">
+                      {tech.name}
+                    </h4>
+                    <p className="text-red-200/60 text-sm">
+                      {tech.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -379,12 +437,15 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">CASE STUDIES</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                CASE STUDIES
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Success Stories
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                Explore some of our recent website development projects and the results we've achieved for our clients.
+                Explore some of our recent website development projects and the
+                results we've achieved for our clients.
               </p>
             </motion.div>
           </div>
@@ -403,19 +464,29 @@ const WebsiteDevelopmentPage = () => {
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
                     <div className="flex flex-col items-center">
-                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">{project.industry}</Badge>
-                      <p className="text-red-200/70 text-center px-6">Case Study Image: {project.title}</p>
+                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">
+                        {project.industry}
+                      </Badge>
+                      <p className="text-red-200/70 text-center px-6">
+                        Case Study Image: {project.title}
+                      </p>
                     </div>
                   </div>
-                  
+
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-red-800/80 to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="text-center p-6">
-                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">{project.industry}</Badge>
-                      <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                      <p className="text-red-100 mb-5 text-sm">{project.description}</p>
-                      <Button 
-                        variant="outline" 
+                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">
+                        {project.industry}
+                      </Badge>
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-red-100 mb-5 text-sm">
+                        {project.description}
+                      </p>
+                      <Button
+                        variant="outline"
                         className="border-2 border-red-400/60 text-white bg-red-700/50 hover:bg-red-700/70"
                       >
                         View Case Study
@@ -424,18 +495,20 @@ const WebsiteDevelopmentPage = () => {
                     </div>
                   </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-red-200/70 text-sm">{project.description}</p>
               </motion.div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Button 
+            <Button
               className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
-              onClick={() => router.push('/portfolio')}
+              onClick={() => router.push("/portfolio")}
             >
               View All Projects
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -454,103 +527,145 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">FAQ</Badge>
+              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                FAQ
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Frequently Asked Questions
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                Common questions about our website development process and services.
+                Common questions about our website development process and
+                services.
               </p>
             </motion.div>
           </div>
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-red-950/30">
-                <TabsTrigger value="general" className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white">
+              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-red-900">
+                <TabsTrigger
+                  value="general"
+                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                >
                   General
                 </TabsTrigger>
-                <TabsTrigger value="technical" className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white">
+                <TabsTrigger
+                  value="technical"
+                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                >
                   Technical
                 </TabsTrigger>
-                <TabsTrigger value="pricing" className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white">
+                <TabsTrigger
+                  value="pricing"
+                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                >
                   Pricing
                 </TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="general" className="space-y-4">
                 {[
                   {
                     question: "How long does it take to develop a website?",
-                    answer: "The timeline varies depending on the complexity of the project. A simple website can be completed in 4-6 weeks, while more complex projects may take 8-12 weeks or longer. We'll provide a detailed timeline during the discovery and planning phase."
+                    answer:
+                      "The timeline varies depending on the complexity of the project. A simple website can be completed in 4-6 weeks, while more complex projects may take 8-12 weeks or longer. We'll provide a detailed timeline during the discovery and planning phase.",
                   },
                   {
                     question: "Will I be able to update the website myself?",
-                    answer: "Yes, we build websites with user-friendly content management systems that allow you to easily update content, add pages, and make basic design changes without technical knowledge. We also provide training to ensure you're comfortable managing your site."
+                    answer:
+                      "Yes, we build websites with user-friendly content management systems that allow you to easily update content, add pages, and make basic design changes without technical knowledge. We also provide training to ensure you're comfortable managing your site.",
                   },
                   {
                     question: "Do you provide ongoing maintenance and support?",
-                    answer: "Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. These packages include regular updates, security monitoring, backups, and technical support."
+                    answer:
+                      "Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. These packages include regular updates, security monitoring, backups, and technical support.",
                   },
                   {
                     question: "Will my website be mobile-friendly?",
-                    answer: "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices including desktops, tablets, and smartphones. This is essential for both user experience and search engine rankings."
-                  }
+                    answer:
+                      "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices including desktops, tablets, and smartphones. This is essential for both user experience and search engine rankings.",
+                  },
                 ].map((faq, index) => (
-                  <div key={index} className="bg-black/60 border border-red-950/30 rounded-lg p-6">
-                    <h4 className="text-lg font-bold text-white mb-2">{faq.question}</h4>
+                  <div
+                    key={index}
+                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                  >
+                    <h4 className="text-lg font-bold text-white mb-2">
+                      {faq.question}
+                    </h4>
                     <p className="text-red-200/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
-              
+
               <TabsContent value="technical" className="space-y-4">
                 {[
                   {
-                    question: "What technologies do you use for website development?",
-                    answer: "We use a range of modern technologies depending on your specific needs. For content-focused websites, we often use WordPress with custom themes. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals."
+                    question:
+                      "What technologies do you use for website development?",
+                    answer:
+                      "We use a range of modern technologies depending on your specific needs. For content-focused websites, we often use WordPress with custom themes. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals.",
                   },
                   {
                     question: "Do you optimize websites for search engines?",
-                    answer: "Yes, SEO best practices are integrated into our development process. We ensure proper site structure, optimized code, fast loading speeds, mobile responsiveness, and other technical SEO factors. For more comprehensive SEO services, we offer dedicated SEO packages."
+                    answer:
+                      "Yes, SEO best practices are integrated into our development process. We ensure proper site structure, optimized code, fast loading speeds, mobile responsiveness, and other technical SEO factors. For more comprehensive SEO services, we offer dedicated SEO packages.",
                   },
                   {
-                    question: "Can you integrate third-party tools and services?",
-                    answer: "Absolutely. We regularly integrate various third-party tools and services such as CRM systems, payment gateways, marketing automation platforms, analytics tools, and more. We ensure seamless integration and proper data flow between your website and external systems."
+                    question:
+                      "Can you integrate third-party tools and services?",
+                    answer:
+                      "Absolutely. We regularly integrate various third-party tools and services such as CRM systems, payment gateways, marketing automation platforms, analytics tools, and more. We ensure seamless integration and proper data flow between your website and external systems.",
                   },
                   {
                     question: "How do you ensure website security?",
-                    answer: "We implement multiple security measures including secure coding practices, regular updates, SSL certificates, firewall protection, and security plugins. For e-commerce sites and applications handling sensitive data, we implement additional security layers and ensure compliance with relevant regulations."
-                  }
+                    answer:
+                      "We implement multiple security measures including secure coding practices, regular updates, SSL certificates, firewall protection, and security plugins. For e-commerce sites and applications handling sensitive data, we implement additional security layers and ensure compliance with relevant regulations.",
+                  },
                 ].map((faq, index) => (
-                  <div key={index} className="bg-black/60 border border-red-950/30 rounded-lg p-6">
-                    <h4 className="text-lg font-bold text-white mb-2">{faq.question}</h4>
+                  <div
+                    key={index}
+                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                  >
+                    <h4 className="text-lg font-bold text-white mb-2">
+                      {faq.question}
+                    </h4>
                     <p className="text-red-200/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
-              
+
               <TabsContent value="pricing" className="space-y-4">
                 {[
                   {
                     question: "How much does a website cost?",
-                    answer: "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $5,000-$15,000, while more complex sites with custom functionality range from $15,000-$50,000+. We provide detailed quotes after understanding your specific needs."
+                    answer:
+                      "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $5,000-$15,000, while more complex sites with custom functionality range from $15,000-$50,000+. We provide detailed quotes after understanding your specific needs.",
                   },
                   {
                     question: "Do you offer payment plans?",
-                    answer: "Yes, we typically structure payments in milestones throughout the project. A common breakdown is 40% upfront, 30% at the design approval stage, and 30% upon project completion. For larger projects, we can create custom payment schedules."
+                    answer:
+                      "Yes, we typically structure payments in milestones throughout the project. A common breakdown is 40% upfront, 30% at the design approval stage, and 30% upon project completion. For larger projects, we can create custom payment schedules.",
                   },
                   {
                     question: "What ongoing costs should I expect?",
-                    answer: "Ongoing costs typically include domain registration ($10-$20/year), hosting ($20-$100/month depending on traffic and requirements), and optional maintenance packages ($100-$500/month based on the level of support needed)."
+                    answer:
+                      "Ongoing costs typically include domain registration ($10-$20/year), hosting ($20-$100/month depending on traffic and requirements), and optional maintenance packages ($100-$500/month based on the level of support needed).",
                   },
                   {
-                    question: "Do you provide cost estimates before starting a project?",
-                    answer: "Yes, we provide detailed proposals and cost estimates after our initial consultation. Our proposals outline all deliverables, timelines, and costs, so you know exactly what to expect before committing to the project."
-                  }
+                    question:
+                      "Do you provide cost estimates before starting a project?",
+                    answer:
+                      "Yes, we provide detailed proposals and cost estimates after our initial consultation. Our proposals outline all deliverables, timelines, and costs, so you know exactly what to expect before committing to the project.",
+                  },
                 ].map((faq, index) => (
-                  <div key={index} className="bg-black/60 border border-red-950/30 rounded-lg p-6">
-                    <h4 className="text-lg font-bold text-white mb-2">{faq.question}</h4>
+                  <div
+                    key={index}
+                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                  >
+                    <h4 className="text-lg font-bold text-white mb-2">
+                      {faq.question}
+                    </h4>
                     <p className="text-red-200/70">{faq.answer}</p>
                   </div>
                 ))}
@@ -563,8 +678,8 @@ const WebsiteDevelopmentPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-red-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div 
-            className="max-w-4xl mx-auto bg-black/60 border border-red-950/30 rounded-xl p-8 md:p-12 text-center"
+          <motion.div
+            className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -574,24 +689,24 @@ const WebsiteDevelopmentPage = () => {
               Ready to Start Your Website Project?
             </h2>
             <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Contact us today for a free consultation and discover how we can help you create a website 
-              that drives real business results.
+              Contact us today for a free consultation and discover how we can
+              help you create a website that drives real business results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                   text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
-                onClick={() => router.push('/contact')}
+                onClick={() => router.push("/contact")}
               >
                 Get a Free Quote
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
-                onClick={() => router.push('/portfolio')}
+                onClick={() => router.push("/portfolio")}
               >
                 View Our Work
               </Button>
