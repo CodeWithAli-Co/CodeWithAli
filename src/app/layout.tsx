@@ -135,9 +135,13 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
                 <div className="flex items-center mb-4">
-                  <div className="h-8 w-8 bg-gradient-to-br from-red-600 to-red-900 rounded-lg flex items-center justify-center">
-                    <Code className="h-5 w-5 text-white" />
-                  </div>
+                  <Image
+                src="/codewithali.png"
+                alt="CodeWithAli"
+                className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
+                width={70}
+                height={70}
+              />
                   <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                     CodeWithAli
                   </span>
