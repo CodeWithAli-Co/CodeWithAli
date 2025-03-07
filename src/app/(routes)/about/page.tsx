@@ -17,9 +17,10 @@ import {
   BarChart,
   Heart,
 } from "lucide-react";
+import { TechIcon } from "../../components/tech-icons";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+
 
 // Team members data
 const teamMembers = [
@@ -77,21 +78,21 @@ const values = [
   },
 ];
 
-// Tech stack
+// Tech stack - corrected to use consistent object structure
 const technologies = [
-  { name: "React", logo: "/tech/react.svg" },
-  { name: "Next.js", logo: "/tech/nextjs.svg" },
-  { name: "Node.js", logo: "/tech/nodejs.svg" },
-  { name: "Tauri.js", logo: "/tech/nodejs.svg" },
-  { name: "Supabase", logo: "/tech/nodejs.svg" },
-  { name: "Stripe", logo: "/tech/nodejs.svg" },
-  { name: "Figma", logo: "/tech/nodejs.svg" },
-  { name: "Electron", logo: "/tech/nodejs.svg" },
-  { name: "TypeScript", logo: "/tech/typescript.svg" },
-  { name: "TailwindCSS", logo: "/tech/tailwind.svg" },
-  { name: "MongoDB", logo: "/tech/mongodb.svg" },
-  { name: "AWS", logo: "/tech/aws.svg" },
-  { name: "Firebase", logo: "/tech/firebase.svg" },
+  { name: "React", logo: "react" },
+  { name: "Next.js", logo: "nextjs" },
+  { name: "Node.js", logo: "nodejs" },
+  { name: "Tauri", logo: "tauri" },
+  { name: "Supabase", logo: "supabase" },
+  { name: "Stripe", logo: "stripe" },
+  { name: "Figma", logo: "figma" },
+  { name: "Electron", logo: "electron" },
+  { name: "TypeScript", logo: "typescript" },
+  { name: "TailwindCSS", logo: "tailwindcss" },
+  { name: "MongoDB", logo: "mongodb" },
+  { name: "AWS", logo: "aws" },
+  { name: "Firebase", logo: "firebase" },
 ];
 
 // Company stats
@@ -682,39 +683,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
+      {/* Technologies Section - Corrected */}
       <section className="py-20 bg-red-950/5 border-y border-red-950/20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-16">
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-              OUR EXPERTISE
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Technologies We Master
-            </h2>
-            <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-              We leverage cutting-edge technologies to build scalable,
-              high-performance solutions.
-            </p>
-          </div>
+  <div className="container mx-auto px-4 md:px-8 lg:px-12">
+    <div className="text-center mb-16">
+      <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+        OUR EXPERTISE
+      </Badge>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Technologies We Master
+      </h2>
+      <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
+        We leverage cutting-edge technologies to build scalable,
+        high-performance solutions.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-6">
-            {technologies.map((tech, index) => (
-              <div
-                key={index}
-                className="bg-black/60 border border-red-900 p-4 rounded-xl flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
-                  <Code className="h-8 w-8 text-red-500/60" />
-                  {/* In a real implementation, you would use next/image here */}
-                  {/* <Image src={tech.logo} alt={tech.name} width={40} height={40} /> */}
-                </div>
-                <span className="text-red-200">{tech.name}</span>
-              </div>
-            ))}
+    <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-7">
+      {technologies.map((tech, index) => (
+        <div
+          key={index}
+          className="bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
+        >
+          <div className="w-10 h-10 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
+            <TechIcon name={tech.logo} />
           </div>
+          <span className="text-red-200">{tech.name}</span>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-20 md:py-24">
