@@ -705,7 +705,7 @@ export default function AboutPage() {
           key={index}
           className="bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
+          <div className="w-11 h-11 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
             <TechIcon name={tech.logo} />
           </div>
           <span className="text-red-200">{tech.name}</span>
