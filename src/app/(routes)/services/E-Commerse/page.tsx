@@ -93,7 +93,7 @@ const EcommerceSolutionsPage = () => {
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const toggleFaq = (index) => {
+  const toggleFaq = (index: any) => {
     if (activeFaq === index) {
       setActiveFaq(null);
     } else {
@@ -148,7 +148,7 @@ const EcommerceSolutionsPage = () => {
                   onClick={() =>
                     document
                       .getElementById("packages")
-                      .scrollIntoView({ behavior: "smooth" })
+                      ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
                   View Packages
